@@ -21,6 +21,69 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="style.css">
+    <style>
+        /* Chatbot Professional Styles */
+        #ai-chat-container {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            z-index: 1000;
+        }
+        #chat-btn {
+            background-color: #2563eb;
+            color: white;
+            border: none;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            font-size: 28px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+        #chat-btn:hover {
+            transform: scale(1.1);
+            box-shadow: 0 6px 20px rgba(37, 99, 235, 0.3);
+        }
+        #chat-box {
+            display: none; /* Initially hidden, toggled by chat.js to 'flex' */
+            position: absolute;
+            bottom: 80px; /* Position it above the button */
+            right: 0;
+            width: 350px;
+            height: 500px;
+            background: #fff;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            flex-direction: column;
+            overflow: hidden;
+        }
+        #chat-header {
+            background: #2563eb;
+            color: white;
+            padding: 15px 20px;
+            font-weight: 600;
+            font-size: 1.1rem;
+        }
+        #messages {
+            flex-grow: 1;
+            padding: 20px;
+            overflow-y: auto;
+            background: #f1f5f9;
+        }
+        #user-input {
+            border: none;
+            padding: 20px;
+            font-size: 1rem;
+            border-top: 1px solid #e2e8f0;
+            outline: none;
+            width: 100%;
+            box-sizing: border-box;
+        }
+    </style>
 </head>
 <body>
 
@@ -83,7 +146,7 @@
     <div class="blog-grid">
         <!-- Blog Post 1 -->
         <div class="blog-card animate-on-scroll">
-            <img src="https://via.placeholder.com/400x250" alt="Blog Post Image" class="blog-card-img">
+            <img src="devlop.png" alt="Blog Post Image" class="blog-card-img">
             <div class="blog-card-content">
                 <span class="blog-card-date">March 03, 2026</span>
                 <h3>एंड्रॉइड डेवलपमेंट के लिए 5 ज़रूरी टिप्स</h3>
@@ -93,7 +156,7 @@
         </div>
         <!-- Blog Post 2 -->
         <div class="blog-card animate-on-scroll" style="animation-delay: 0.2s;">
-             <img src="https://via.placeholder.com/400x250" alt="Blog Post Image" class="blog-card-img">
+             <img src="blog (4).jpg" alt="Blog Post Image" class="blog-card-img">
             <div class="blog-card-content">
                 <span class="blog-card-date">February 25, 2026</span>
                 <h3>अपनी ऐप से कमाई कैसे करें?</h3>
@@ -169,7 +232,7 @@
 
     <p class="copyright">&copy; 2026 Pavan Digital Service. All rights reserved.</p>
 </footer>
-<div id="ai-chat-container" style="position: fixed; bottom: 20px; right: 20px; z-index: 1000;">
+<div id="ai-chat-container">
     <button id="chat-btn">👩‍💻</button>
     <div id="chat-box">
         <div id="chat-header">Aria AI Assistant</div>
