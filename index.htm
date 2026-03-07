@@ -244,6 +244,7 @@
 <!-- <script src="contact.js"></script> -->
 <script>
     // फॉर्म सबमिशन के लिए नया और साफ़ कोड
+    // स्टेप 1 में कॉपी किया गया नया URL यहाँ पेस्ट करें
     const scriptURL = 'https://script.google.com/macros/s/AKfycbyZXN0Oqr-OpEN4qvbVqAxGq5lLe75kU-AINir2Om7ZQWeWdAVbP21o2iUYgajPCAqlDg/exec';
     const form = document.getElementById('contact-form');
     const resultDiv = document.getElementById('form-result');
@@ -259,16 +260,26 @@
 
             fetch(scriptURL, { method: 'POST', body: new FormData(form)})
                 .then(response => {
-                    resultDiv.innerHTML = "<span style='color: green;'>आपका संदेश सफलतापूर्वक भेज दिया गया है!</span>";
-                    submitBtn.disabled = false;
-                    submitBtn.innerText = "संदेश भेजें";
-                    form.reset();
+                    if (!response.ok) {
+                        throw new Error('Network response was not ok');
+                    }
+                    return response.json(); // रिस्पॉन्स को JSON में बदलें
+                })
+                .then(data => {
+                    if (data.result === 'success') {
+                        resultDiv.innerHTML = "<span style='color: green;'>आपका संदेश सफलतापूर्वक भेज दिया गया है!</span>";
+                        form.reset();
+                    } else {
+                        throw new Error(data.error || 'Unknown error from script');
+                    }
                 })
                 .catch(error => {
                     resultDiv.innerHTML = "<span style='color: red;'>कुछ गलती हुई! कृपया इंटरनेट चेक करें।</span>";
+                    console.error('Error!', error.message);
+                })
+                .finally(() => {
                     submitBtn.disabled = false;
                     submitBtn.innerText = "संदेश भेजें";
-                    console.error('Error!', error.message);
                 });
         });
     }
