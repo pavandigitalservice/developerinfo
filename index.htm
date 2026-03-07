@@ -93,7 +93,6 @@
             <a href="#my-apps">Apps</a>
             <a href="#about-me">About</a>
             <a href="blog.html">Blog</a>
-            <a href="#contact-me">Contact</a>
         </div>
         <button class="hamburger" id="hamburger-btn" aria-label="Toggle menu">
             <span class="hamburger-bar"></span>
@@ -186,33 +185,6 @@
     <div class="ad-placeholder">Your Ad Here</div>
 </section>
 
-<section id="contact-me" class="section section-light">
-    <h2 class="section-title">अपना प्रोजेक्ट शुरू करें</h2>
-    <div class="contact-form-container animate-on-scroll">
-        <form id="contact-form">
-            <div class="form-grid">
-                <input type="text" name="name" placeholder="आपका नाम" required>
-                <input type="email" name="email" placeholder="आपका ईमेल" required>
-            </div>
-            <div class="form-grid">
-                <input type="tel" name="phone" placeholder="मोबाइल नंबर" required>
-                <select name="service" required style="padding: 10px; border: 1px solid #ccc; border-radius: 4px; background: white; width: 100%;">
-                    <option value="" disabled selected>आप क्या बनवाना चाहते हैं?</option>
-                    <option value="Website Development">वेबसाइट (Website)</option>
-                    <option value="Android App">एंड्रॉइड ऐप (Android App)</option>
-                    <option value="Other">अन्य जानकारी</option>
-                </select>
-            </div>
-            <div class="full-width-input">
-                <textarea name="message" rows="6" placeholder="अपने प्रोजेक्ट के बारे में थोड़ा बताएं..." required></textarea>
-            </div>
-            <div class="submit-button-container">
-                <button type="submit" class="btn-download btn-submit" id="submit-btn">रिक्वेस्ट भेजें</button>
-            </div>
-        </form>
-        <div id="form-result" style="text-align: center; margin-top: 15px; font-weight: bold;"></div>
-    </div>
-</section>
 <footer>
     <div class="footer-content">
         <h2>Our Service Your Future </h2>
@@ -231,7 +203,6 @@
     <div class="footer-links">
         <a href="privacy-policy.html">Privacy Policy</a>
         <a href="terms-of-service.html">Terms of Service</a>
-        <a href="#contact-me">Contact Us</a>
     </div>
 
     <p class="copyright">&copy; 2026 Pavan Digital Service. All rights reserved.</p>
@@ -248,47 +219,5 @@
 <script src="chat.js"></script>
 <script src="animations.js"></script>
 <!-- <script src="contact.js"></script> -->
-<script>
-    // फॉर्म सबमिशन के लिए नया और साफ़ कोड
-    // स्टेप 1 में कॉपी किया गया नया URL यहाँ पेस्ट करें
-    const scriptURL = 'https://script.google.com/macros/s/AKfycbxgMZQwApP3CZoKXvQboLoBkGAw13CTxrCqauWJ9IhpUigfQ5YQaATELrrNm0BK9NwfWg/exec';
-    const form = document.getElementById('contact-form');
-    const resultDiv = document.getElementById('form-result');
-    const submitBtn = document.getElementById('submit-btn');
-
-    if (form) {
-        form.addEventListener('submit', e => {
-            e.preventDefault(); // यह लाइन पेज को रीलोड होने से रोकती है
-            
-            submitBtn.disabled = true;
-            submitBtn.innerText = "भेजा जा रहा है...";
-            resultDiv.innerHTML = "";
-
-            fetch(scriptURL, { method: 'POST', body: new FormData(form)})
-                .then(response => {
-                    if (!response.ok) {
-                        throw new Error('Network response was not ok');
-                    }
-                    return response.json(); // रिस्पॉन्स को JSON में बदलें
-                })
-                .then(data => {
-                    if (data.result === 'success') {
-                        resultDiv.innerHTML = "<span style='color: green;'>आपका संदेश सफलतापूर्वक भेज दिया गया है!</span>";
-                        form.reset();
-                    } else {
-                        throw new Error(data.error || 'Unknown error from script');
-                    }
-                })
-                .catch(error => {
-                    resultDiv.innerHTML = "<span style='color: red;'>कुछ गलती हुई! कृपया इंटरनेट चेक करें।</span>";
-                    console.error('Error!', error.message);
-                })
-                .finally(() => {
-                    submitBtn.disabled = false;
-                    submitBtn.innerText = "रिक्वेस्ट भेजें";
-                });
-        });
-    }
-</script>
 <script src="main.js"></script>
 </html>
