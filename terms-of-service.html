@@ -29,6 +29,14 @@
     </style>
 </head>
 <body>
+    <!-- Loading Spinner -->
+    <div id="loader-wrapper">
+        <div class="loader"></div>
+    </div>
+
+    <!-- Particles.js container -->
+    <div id="tsparticles"></div>
+
     <nav>
         <div class="logo"><a href="index.htm" style="text-decoration: none; color: #2563eb;">pavan digital service</a></div>
         <div class="nav-links">
@@ -37,10 +45,18 @@
             <a href="blog.html">Blog</a>
             <a href="index.htm#contact-me">Contact</a>
         </div>
+        <button id="theme-toggle" class="theme-btn" aria-label="Toggle Dark Mode">
+            <i class="fas fa-moon"></i>
+        </button>
+        <button class="hamburger" id="hamburger-btn" aria-label="Toggle menu">
+            <span class="hamburger-bar"></span>
+            <span class="hamburger-bar"></span>
+            <span class="hamburger-bar"></span>
+        </button>
     </nav>
 
-    <section style="padding: 80px 10%; background: #f1f5f9;">
-        <h2 style="text-align: center; margin-bottom: 50px; font-size: 2.5rem; color: #1e293b;">Terms of Service</h2>
+    <section class="section section-light">
+        <h2 class="section-title">Terms of Service</h2>
         <div class="legal-content">
             <p><strong>Last updated: March 03, 2026</strong></p>
             <p>हमारी वेबसाइट और सेवाओं तक पहुँचने और उपयोग करने से पहले कृपया इन सेवा की शर्तों को ध्यान से पढ़ें।</p>
@@ -65,13 +81,26 @@
         </div>
     </section>
 
-    <footer style="background: #1e293b; color: white; padding: 60px 10% 20px; text-align: center;">
-        <!-- सोशल मीडिया लिंक -->
-        <div class="social-links" style="margin-bottom: 30px;">
+    <footer>
+        <div class="social-links">
             <a href="#" target="_blank" title="GitHub"><i class="fab fa-github"></i></a>
             <a href="#" target="_blank" title="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
         </div>
-        <p style="font-size: 0.9rem; color: #94a3b8;">&copy; 2026 Pavan Digital Service. All rights reserved.</p>
+        <hr>
+        <div class="footer-links">
+            <a href="privacy-policy.html">Privacy Policy</a>
+            <a href="terms-of-service.html">Terms of Service</a>
+            <a href="index.htm#contact-me">Contact Us</a>
+        </div>
+        <p class="copyright">&copy; 2026 Pavan Digital Service. All rights reserved.</p>
     </footer>
+
+    <!-- Scripts -->
+    <script src="animations.js"></script>
+    <script src="main.js"></script>
+    <!-- tsparticles library for background animation -->
+    <script src="https://cdn.jsdelivr.net/npm/tsparticles@2/tsparticles.bundle.min.js"></script>
+    <!-- custom particles config -->
+    <script src="particles-config.js"></script>
 </body>
 </html>

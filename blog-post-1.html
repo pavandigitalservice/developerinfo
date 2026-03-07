@@ -10,6 +10,14 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    <!-- Loading Spinner -->
+    <div id="loader-wrapper">
+        <div class="loader"></div>
+    </div>
+
+    <!-- Particles.js container -->
+    <div id="tsparticles"></div>
+
     <nav>
         <div class="logo"><a href="index.htm" style="text-decoration: none; color: #2563eb;">pavan digital service</a></div>
         <div class="nav-links">
@@ -18,6 +26,9 @@
             <a href="blog.html">Blog</a>
             <a href="index.htm#contact-me">Contact</a>
         </div>
+        <button id="theme-toggle" class="theme-btn" aria-label="Toggle Dark Mode">
+            <i class="fas fa-moon"></i>
+        </button>
     </nav>
 
     <section class="section section-light">
@@ -108,6 +119,13 @@
         </div>
         <p class="copyright">&copy; 2026 Pavan Digital Service. All rights reserved.</p>
     </footer>
-    <script src="blog-post.js"></script>
+
+    <!-- Scripts -->
+    <script src="animations.js"></script>
+    <script src="main.js"></script>
+    <!-- tsparticles library for background animation -->
+    <script src="https://cdn.jsdelivr.net/npm/tsparticles@2/tsparticles.bundle.min.js"></script>
+    <!-- custom particles config -->
+    <script src="particles-config.js"></script>
 </body>
 </html>

@@ -20,4 +20,39 @@ document.addEventListener('DOMContentLoaded', () => {
             smartBackspace: true,
         });
     }
+
+    // Dark Mode Toggle
+    const themeToggle = document.getElementById('theme-toggle');
+    const body = document.body;
+    const icon = themeToggle ? themeToggle.querySelector('i') : null;
+
+    // Check local storage for theme preference
+    if (localStorage.getItem('theme') === 'dark') {
+        body.classList.add('dark-mode');
+        if(icon) { icon.classList.replace('fa-moon', 'fa-sun'); }
+    }
+
+    if (themeToggle) {
+        themeToggle.addEventListener('click', () => {
+            body.classList.toggle('dark-mode');
+            if (body.classList.contains('dark-mode')) {
+                icon.classList.replace('fa-moon', 'fa-sun');
+                localStorage.setItem('theme', 'dark');
+            } else {
+                icon.classList.replace('fa-sun', 'fa-moon');
+                localStorage.setItem('theme', 'light');
+            }
+        });
+    }
+
+    // Loading Spinner Logic
+    const loader = document.getElementById('loader-wrapper');
+    if (loader) {
+        window.addEventListener('load', () => {
+            loader.classList.add('loader-hidden');
+            loader.addEventListener('transitionend', () => {
+                loader.remove();
+            });
+        });
+    }
 });

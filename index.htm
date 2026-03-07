@@ -3,14 +3,31 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pavan Shilpi - Official Website</title>
+    <title>Pavan Shilpi - Android App Developer & Web Designer Portfolio</title>
     
     <!-- SEO Meta Tags -->
     <meta name="description" content="Pavan Shilpi, a passionate Android developer creating innovative and high-quality apps. View my portfolio and get in touch for your next project.">
     <meta name="keywords" content="Pavan Shilpi, Android Developer, Mobile App Developer, Portfolio, Quiz Master App, Pavan Digital Service, Android Apps, Freelance Developer">
 
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://your-website-domain.com/index.htm">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://your-website-domain.com/">
+    <meta property="og:title" content="Pavan Shilpi - Android App Developer & Web Designer">
+    <meta property="og:description" content="Pavan Shilpi, a passionate Android developer creating innovative and high-quality apps. View my portfolio and get in touch for your next project.">
+    <meta property="og:image" content="https://your-website-domain.com/my%20photo.jpeg">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://your-website-domain.com/">
+    <meta property="twitter:title" content="Pavan Shilpi - Android App Developer & Web Designer">
+    <meta property="twitter:description" content="Pavan Shilpi, a passionate Android developer creating innovative and high-quality apps. View my portfolio and get in touch for your next project.">
+    <meta property="twitter:image" content="https://your-website-domain.com/my%20photo.jpeg">
+
     <!-- Security Meta Tags -->
-    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' https://unpkg.com https://pagead2.googlesyndication.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://cdnjs.cloudflare.com; font-src 'self' https://fonts.gstatic.com https://cdnjs.cloudflare.com; img-src 'self' https: data:; connect-src 'self' https://api.web3forms.com; frame-src https://pagead2.googlesyndication.com;">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https://unpkg.com https://pagead2.googlesyndication.com https://cdn.jsdelivr.net; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://cdnjs.cloudflare.com; font-src 'self' https://fonts.gstatic.com https://cdnjs.cloudflare.com; img-src 'self' https: data:; connect-src 'self' https://api.web3forms.com https://script.google.com https://script.googleusercontent.com; frame-src https://pagead2.googlesyndication.com;">
     <meta name="referrer" content="no-referrer-when-downgrade">
 
     <!-- Google AdSense -->
@@ -23,6 +40,13 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    <!-- Loading Spinner -->
+    <div id="loader-wrapper">
+        <div class="loader"></div>
+    </div>
+
+    <!-- Particles.js container -->
+    <div id="tsparticles"></div>
 
     <nav>
         <div class="logo"><a href="index.htm">pavan digital service</a></div>
@@ -30,7 +54,11 @@
             <a href="#my-apps">Apps</a>
             <a href="#about-me">About</a>
             <a href="blog.html">Blog</a>
+            <a href="#contact-me">Contact</a>
         </div>
+        <button id="theme-toggle" class="theme-btn" aria-label="Toggle Dark Mode">
+            <i class="fas fa-moon"></i>
+        </button>
         <button class="hamburger" id="hamburger-btn" aria-label="Toggle menu">
             <span class="hamburger-bar"></span>
             <span class="hamburger-bar"></span>
@@ -39,7 +67,8 @@
     </nav>
 
     <header class="hero">
-        <h1>Hi, I'm <span class="highlight">PAVAN SHILPI</span></h1>
+        <h1>Hi, I'm <span class="highlight">PAVAN SHILPI</span> - Android & Web Developer</h1>
+        <p>This is my official website where I showcase my expertise as a professional App and Web Developer</p> <br>
         <a href="#my-apps" class="btn-download btn-hero">मेरे ऐप्स देखें</a>
     </header>
 <section id="my-apps" class="section section-light">
@@ -82,7 +111,7 @@
     <div class="blog-grid">
         <!-- Blog Post 1 -->
         <div class="blog-card animate-on-scroll">
-            <img src="devlop.png" alt="Blog Post Image" class="blog-card-img">
+            <img src="devlop.png" alt="Android Development Tips" class="blog-card-img">
             <div class="blog-card-content">
                 <span class="blog-card-date">March 03, 2026</span>
                 <h3>एंड्रॉइड डेवलपमेंट के लिए 5 ज़रूरी टिप्स</h3>
@@ -92,7 +121,7 @@
         </div>
         <!-- Blog Post 2 -->
         <div class="blog-card animate-on-scroll" style="animation-delay: 0.2s;">
-             <img src="money.jpg" alt="Blog Post Image" class="blog-card-img">
+             <img src="money.jpg" alt="App Monetization Strategies" class="blog-card-img">
             <div class="blog-card-content">
                 <span class="blog-card-date">February 25, 2026</span>
                 <h3>अपनी ऐप से कमाई कैसे करें?</h3>
@@ -102,7 +131,7 @@
         </div>
         <!-- Blog Post 3 -->
         <div class="blog-card animate-on-scroll" style="animation-delay: 0.4s;">
-             <img src="blog (3).jpg" alt="Blog Post Image" class="blog-card-img">
+             <img src="blog (3).jpg" alt="UI/UX Design Importance" class="blog-card-img">
             <div class="blog-card-content">
                 <span class="blog-card-date">February 18, 2026</span>
                 <h3>UI/UX का महत्व मोबाइल ऐप्स में</h3>
@@ -121,6 +150,82 @@
     <!-- AdSense से स्वीकृत होने के बाद, इस div को अपने AdSense विज्ञापन कोड से बदलें। -->
     <div class="ad-placeholder">Your Ad Here</div>
 </section>
+<!-- Contact Section -->
+<section id="contact-me" class="section section-light">
+    <h2 class="section-title">Start Your Project</h2>
+    <p style="text-align: center; margin-bottom: 30px; color: #666;">क्या आप अपना खुद का ऐप या वेबसाइट बनवाना चाहते हैं? नीचे दिए गए फॉर्म को भरें।</p>
+    
+    <div class="contact-container">
+        <form name="submit-to-google-sheet" id="contact-form">
+            <div class="form-group">
+                <label for="name">आपका नाम (Name)</label>
+                <input type="text" id="name" name="Name" placeholder="Enter your name" required>
+            </div>
+            <div class="form-group">
+                <label for="email">ईमेल (Email)</label>
+                <input type="email" id="email" name="Email" placeholder="Enter your email" required>
+            </div>
+            <div class="form-group">
+                <label for="phone">मोबाइल नंबर (Phone)</label>
+                <input type="tel" id="phone" name="Phone" placeholder="Enter your mobile number" required>
+            </div>
+            <div class="form-group">
+                <label for="service">आप क्या बनवाना चाहते हैं? (Service)</label>
+                <select id="service" name="Service" required>
+                    <option value="" disabled selected>Select Service</option>
+                    <option value="Android App Development">Android App Development</option>
+                    <option value="Website Development">Website Development</option>
+                    <option value="Other">Other Query</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="message">संदेश (Message)</label>
+                <textarea id="message" name="Message" rows="5" placeholder="Tell me about your project..." required></textarea>
+            </div>
+            <button type="submit" class="btn-submit">Send Message <i class="fas fa-paper-plane"></i></button>
+        </form>
+        <div id="msg-status"></div>
+    </div>
+</section>
+
+<script>
+    // Google Sheet Connection Script
+    const scriptURL = 'https://script.google.com/macros/s/AKfycbzpRk5ZDcBbsrF6I6JED03ZQSotOKVcSs9GzfMmPBdvd-Kjc3fvvy6UA51bzQriO-uAsA/exec'; // यहाँ अपना Google App Script URL पेस्ट करें
+    
+    // फॉर्म को ID के जरिए ढूँढना ज्यादा सुरक्षित है
+    const form = document.getElementById('contact-form');
+    const msgStatus = document.getElementById("msg-status");
+
+    if (form) {
+        form.addEventListener('submit', e => {
+          e.preventDefault(); // यह लाइन पेज को ऊपर जाने (Reload) से रोकती है
+          console.log("Form submission started...");
+          msgStatus.innerHTML = "Sending...";
+          msgStatus.style.color = "#2563eb";
+          const submitBtn = form.querySelector('button[type="submit"]');
+          if(submitBtn) submitBtn.disabled = true; // बटन को डिसेबल करें
+
+          fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+            .then(response => {
+                msgStatus.innerHTML = "Message Sent Successfully! I will contact you soon.";
+                msgStatus.style.color = "green";
+                if(submitBtn) submitBtn.disabled = false;
+                setTimeout(function(){
+                    msgStatus.innerHTML = "";
+                    form.reset();
+                }, 5000);
+            })
+            .catch(error => {
+                msgStatus.innerHTML = "Error! Please try again.";
+                msgStatus.style.color = "red";
+                if(submitBtn) submitBtn.disabled = false;
+                console.error('Error!', error.message);
+            });
+        });
+    } else {
+        console.error("Form element not found! Check HTML ID.");
+    }
+</script>
 
 <footer>
     <div class="footer-content">
@@ -148,4 +253,29 @@
 <script src="animations.js"></script>
 <!-- <script src="contact.js"></script> -->
 <script src="main.js"></script>
+
+<!-- tsparticles library for background animation -->
+<script src="https://cdn.jsdelivr.net/npm/tsparticles@2/tsparticles.bundle.min.js"></script>
+<!-- custom particles config, now enabled to match other pages -->
+<script src="particles-config.js"></script>
+<!-- Schema.org JSON-LD for SEO -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "name": "Pavan Shilpi",
+  "url": "https://your-website-domain.com",
+  "image": "https://your-website-domain.com/my%20photo.jpeg",
+  "jobTitle": "Android Developer",
+  "worksFor": {
+    "@type": "Organization",
+    "name": "Pavan Digital Service"
+  },
+  "sameAs": [
+    "https://github.com/yourusername",
+    "https://linkedin.com/in/yourusername"
+  ]
+}
+</script>
+</body>
 </html>
